@@ -15,7 +15,7 @@ This file stores all the global hyperparameters used throughout the model and tr
 - `dropout`: Dropout probability.
 - `learning_rate`, `max_iters`, etc.
 
-> 🧠 *Your understanding*: "Batch size is how many samples are sent in each time, and each example is a 256×384 vector — 256 tokens, each with 384 features."
+> 🧠 *My understanding*: "Batch size is how many samples are sent in each time, and each example is a 256×384 vector — 256 tokens, each with 384 features."
 
 ---
 
@@ -28,7 +28,7 @@ This is the main class `GPTLanguageModel`, which ties everything together.
 - Handles the forward pass with optional loss computation
 - Includes a `.generate()` method for autoregressive text generation
 
-> 🧠 *Your observation*: "This class just combines everything: token embedding, position embedding, attention blocks."
+> 🧠 *My observation*: "This class just combines everything: token embedding, position embedding, attention blocks."
 
 ---
 
@@ -41,7 +41,7 @@ Each block contains:
 - Two `LayerNorm` layers
 - Residual connections for stability
 
-> 🧠 *Your understanding*: "Block is attention + feedforward, with layer norms applied and residuals used to avoid vanishing gradients."
+> 🧠 *My understanding*: "Block is attention + feedforward, with layer norms applied and residuals used to avoid vanishing gradients."
 
 ---
 
@@ -50,7 +50,7 @@ Defines:
 - `Head`: A single self-attention head, implementing queries, keys, values, causal masking with a lower-triangular matrix (`register_buffer('tril', ...)`)
 - `MultiHeadAttention`: Combines multiple `Head` instances in parallel and projects the result back to the embedding size.
 
-> 🧠 *Your summary*: "This line `self.heads = nn.ModuleList([Head(head_size) for _ in range(num_heads)])` creates 6 attention heads. After that, everything gets concatenated and projected back to (64, 256, 384) — not by reducing size, but by transforming the last dimension linearly."
+> 🧠 *My summary*: "This line `self.heads = nn.ModuleList([Head(head_size) for _ in range(num_heads)])` creates 6 attention heads. After that, everything gets concatenated and projected back to (64, 256, 384) — not by reducing size, but by transforming the last dimension linearly."
 
 ---
 
