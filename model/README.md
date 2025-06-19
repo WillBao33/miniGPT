@@ -13,6 +13,7 @@ This file stores all the global hyperparameters used throughout the model and tr
 - `n_head`: Number of attention heads.
 - `n_layer`: Number of Transformer blocks.
 - `dropout`: Dropout probability.
+- `device`: Train on CPU or GPU (**Make sure to edit this line if you're using cuda!!!**)
 - `learning_rate`, `max_iters`, etc.
 
 > 🧠 *My understanding*: "Batch size is how many samples are sent in each time, and each example is a 256×384 vector — 256 tokens, each with 384 features."
