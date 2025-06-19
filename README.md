@@ -21,11 +21,11 @@ This project is a **modular refactor** of [Andrej Karpathy's](https://github.com
 First, clone the repo and set up a virtual environment:
 
 ```bash
-git clone https://github.com/yourusername/transformer-pytorch.git
-cd transformer-pytorch
+git clone https://github.com/WillBao33/miniGPT
+cd miniGPT
 python3 -m venv gpt-env
 source gpt-env/bin/activate
-pip install torch
+pip3 install torch torchvision torchaudio
 ```
 
 Download the dataset (if not already included):
